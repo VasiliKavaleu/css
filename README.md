@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-git clone
+git clone https://github.com/VasiliKavaleu/css.git
 ```
 
 ### Activate environment
@@ -22,11 +22,11 @@ python manage.py migrate --settings=config.settings.local
 
 ### Run on local mode
 ```
-python manage.py runserver --settings=config.settings.local
+python3 manage.py runserver --settings=config.settings.local
 ```
 
 ### Run on production mode
 ```
-python manage.py runserver --settings=config.settings.pro
+python3 manage.py runserver --settings=config.settings.pro
 ```
 
