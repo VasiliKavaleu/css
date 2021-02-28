@@ -59,8 +59,12 @@
 						</div>
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div><b>Регистрация</b></div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div><b>Войти</b></div></a></li>
+								{% if user.is_authenticated %}
+									<li><a href=""><i class="ion-person"></i><div><b>Здравствуйте, {{user.first_name}}!</b></div></a></li>
+								{% else %}
+									<li><a href="{% url 'account:register' %}"><i class="ion-person-add"></i><div><b>Регистрация</b></div></a></li>
+									<li><a href="{% url 'account:login_user' %}"><i class="ion-person"></i><div><b>Войти</b></div></a></li>
+								{% endif %}
 							</ul>
 						</div>
 					</div>
@@ -192,7 +196,7 @@
 									<li><a href="#"><i class="icon ion-person"></i> Аккаунт</a></li>
 									<li><a href="#"><i class="icon ion-settings"></i> Мои проекты</a></li>
 									<li class="divider"></li>
-									<li><a href="#"><i class="icon ion-log-out"></i> Выйти</a></li>
+									<li><a href="{% url 'account:logout_user' %}"><i class="icon ion-log-out"></i> Выйти</a></li>
 								</ul>
 							</li>
 						</ul>
